@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96E9C09619E4421000C7A502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C09519E4421000C7A502 /* AppDelegate.swift */; };
+		96E9C09819E4421000C7A502 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C09719E4421000C7A502 /* ViewController.swift */; };
+		96E9C09B19E4421000C7A502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09919E4421000C7A502 /* Main.storyboard */; };
+		96E9C09D19E4421000C7A502 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09C19E4421000C7A502 /* Images.xcassets */; };
+		96E9C0A019E4421000C7A502 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09E19E4421000C7A502 /* LaunchScreen.xib */; };
+		96E9C0AC19E4421000C7A502 /* RhythWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C0AB19E4421000C7A502 /* RhythWalkTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96E9C0A619E4421000C7A502 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96E9C08819E4421000C7A502 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96E9C08F19E4421000C7A502;
+			remoteInfo = RhythWalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		96E9C09019E4421000C7A502 /* RhythWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhythWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E9C09419E4421000C7A502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E9C09519E4421000C7A502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96E9C09719E4421000C7A502 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96E9C09A19E4421000C7A502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96E9C09C19E4421000C7A502 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		96E9C09F19E4421000C7A502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		96E9C0A519E4421000C7A502 /* RhythWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E9C0AA19E4421000C7A502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96E9C0AB19E4421000C7A502 /* RhythWalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythWalkTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96E9C08D19E4421000C7A502 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E9C0A219E4421000C7A502 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96E9C08719E4421000C7A502 = {
+			isa = PBXGroup;
+			children = (
+				96E9C09219E4421000C7A502 /* RhythWalk */,
+				96E9C0A819E4421000C7A502 /* RhythWalkTests */,
+				96E9C09119E4421000C7A502 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96E9C09119E4421000C7A502 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96E9C09019E4421000C7A502 /* RhythWalk.app */,
+				96E9C0A519E4421000C7A502 /* RhythWalkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96E9C09219E4421000C7A502 /* RhythWalk */ = {
+			isa = PBXGroup;
+			children = (
+				96E9C09519E4421000C7A502 /* AppDelegate.swift */,
+				96E9C09719E4421000C7A502 /* ViewController.swift */,
+				96E9C09919E4421000C7A502 /* Main.storyboard */,
+				96E9C09C19E4421000C7A502 /* Images.xcassets */,
+				96E9C09E19E4421000C7A502 /* LaunchScreen.xib */,
+				96E9C09319E4421000C7A502 /* Supporting Files */,
+			);
+			path = RhythWalk;
+			sourceTree = "<group>";
+		};
+		96E9C09319E4421000C7A502 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96E9C09419E4421000C7A502 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96E9C0A819E4421000C7A502 /* RhythWalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				96E9C0AB19E4421000C7A502 /* RhythWalkTests.swift */,
+				96E9C0A919E4421000C7A502 /* Supporting Files */,
+			);
+			path = RhythWalkTests;
+			sourceTree = "<group>";
+		};
+		96E9C0A919E4421000C7A502 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96E9C0AA19E4421000C7A502 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96E9C08F19E4421000C7A502 /* RhythWalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96E9C0AF19E4421000C7A502 /* Build configuration list for PBXNativeTarget "RhythWalk" */;
+			buildPhases = (
+				96E9C08C19E4421000C7A502 /* Sources */,
+				96E9C08D19E4421000C7A502 /* Frameworks */,
+				96E9C08E19E4421000C7A502 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RhythWalk;
+			productName = RhythWalk;
+			productReference = 96E9C09019E4421000C7A502 /* RhythWalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96E9C0A419E4421000C7A502 /* RhythWalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96E9C0B219E4421000C7A502 /* Build configuration list for PBXNativeTarget "RhythWalkTests" */;
+			buildPhases = (
+				96E9C0A119E4421000C7A502 /* Sources */,
+				96E9C0A219E4421000C7A502 /* Frameworks */,
+				96E9C0A319E4421000C7A502 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96E9C0A719E4421000C7A502 /* PBXTargetDependency */,
+			);
+			name = RhythWalkTests;
+			productName = RhythWalkTests;
+			productReference = 96E9C0A519E4421000C7A502 /* RhythWalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96E9C08819E4421000C7A502 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Jun Murakami";
+				TargetAttributes = {
+					96E9C08F19E4421000C7A502 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					96E9C0A419E4421000C7A502 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 96E9C08F19E4421000C7A502;
+					};
+				};
+			};
+			buildConfigurationList = 96E9C08B19E4421000C7A502 /* Build configuration list for PBXProject "RhythWalk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96E9C08719E4421000C7A502;
+			productRefGroup = 96E9C09119E4421000C7A502 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96E9C08F19E4421000C7A502 /* RhythWalk */,
+				96E9C0A419E4421000C7A502 /* RhythWalkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96E9C08E19E4421000C7A502 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E9C09B19E4421000C7A502 /* Main.storyboard in Resources */,
+				96E9C0A019E4421000C7A502 /* LaunchScreen.xib in Resources */,
+				96E9C09D19E4421000C7A502 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E9C0A319E4421000C7A502 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96E9C08C19E4421000C7A502 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E9C09819E4421000C7A502 /* ViewController.swift in Sources */,
+				96E9C09619E4421000C7A502 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96E9C0A119E4421000C7A502 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E9C0AC19E4421000C7A502 /* RhythWalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96E9C0A719E4421000C7A502 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96E9C08F19E4421000C7A502 /* RhythWalk */;
+			targetProxy = 96E9C0A619E4421000C7A502 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96E9C09919E4421000C7A502 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96E9C09A19E4421000C7A502 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96E9C09E19E4421000C7A502 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96E9C09F19E4421000C7A502 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96E9C0AD19E4421000C7A502 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96E9C0AE19E4421000C7A502 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96E9C0B019E4421000C7A502 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RhythWalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96E9C0B119E4421000C7A502 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RhythWalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96E9C0B319E4421000C7A502 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RhythWalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhythWalk.app/RhythWalk";
+			};
+			name = Debug;
+		};
+		96E9C0B419E4421000C7A502 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RhythWalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhythWalk.app/RhythWalk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96E9C08B19E4421000C7A502 /* Build configuration list for PBXProject "RhythWalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E9C0AD19E4421000C7A502 /* Debug */,
+				96E9C0AE19E4421000C7A502 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96E9C0AF19E4421000C7A502 /* Build configuration list for PBXNativeTarget "RhythWalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E9C0B019E4421000C7A502 /* Debug */,
+				96E9C0B119E4421000C7A502 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96E9C0B219E4421000C7A502 /* Build configuration list for PBXNativeTarget "RhythWalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E9C0B319E4421000C7A502 /* Debug */,
+				96E9C0B419E4421000C7A502 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96E9C08819E4421000C7A502 /* Project object */;
+}
