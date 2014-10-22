@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96153A0A19E4510700F89FE9 /* 停止ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 96153A0919E4510700F89FE9 /* 停止ボタン.png */; };
 		962D221619F6CBDB00890796 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962D221519F6CBDA00890796 /* SpriteKit.framework */; };
 		9680CB4619F0CF2B0095763E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9680CB4519F0CF2B0095763E /* MediaPlayer.framework */; };
 		9680CB4819F0D0090095763E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9680CB4719F0D0090095763E /* CoreGraphics.framework */; };
@@ -16,15 +15,16 @@
 		96B8C1E519E45E180042C6E6 /* 青大円.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B8C1E419E45E180042C6E6 /* 青大円.png */; };
 		96B8C1E719E463110042C6E6 /* 再生ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B8C1E619E463110042C6E6 /* 再生ボタン.png */; };
 		96B8C1E919E4682F0042C6E6 /* 矢印.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B8C1E819E4682F0042C6E6 /* 矢印.png */; };
+		96C9FF6719F7A42C004DDB56 /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C9FF6619F7A42C004DDB56 /* button_left.png */; };
+		96C9FF6919F7A436004DDB56 /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C9FF6819F7A436004DDB56 /* button_right.png */; };
+		96C9FF6B19F7A443004DDB56 /* musicalnote_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C9FF6A19F7A443004DDB56 /* musicalnote_big.png */; };
+		96C9FF6D19F7A494004DDB56 /* 停止ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C9FF6C19F7A494004DDB56 /* 停止ボタン.png */; };
 		96E9C09619E4421000C7A502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C09519E4421000C7A502 /* AppDelegate.swift */; };
 		96E9C09819E4421000C7A502 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C09719E4421000C7A502 /* ViewController.swift */; };
 		96E9C09B19E4421000C7A502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09919E4421000C7A502 /* Main.storyboard */; };
 		96E9C09D19E4421000C7A502 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09C19E4421000C7A502 /* Images.xcassets */; };
 		96E9C0A019E4421000C7A502 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09E19E4421000C7A502 /* LaunchScreen.xib */; };
 		96E9C0AC19E4421000C7A502 /* RhythWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C0AB19E4421000C7A502 /* RhythWalkTests.swift */; };
-		96E9C0B619E4461400C7A502 /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C0B519E4461400C7A502 /* button_left.png */; };
-		96E9C0B819E4463400C7A502 /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C0B719E4463400C7A502 /* button_right.png */; };
-		96E9C0BA19E4466000C7A502 /* musicalnote_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C0B919E4466000C7A502 /* musicalnote_big.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		96153A0919E4510700F89FE9 /* 停止ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "停止ボタン.png"; path = "../停止ボタン.png"; sourceTree = "<group>"; };
 		962D221519F6CBDA00890796 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		9680CB4519F0CF2B0095763E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9680CB4719F0D0090095763E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,6 +46,10 @@
 		96B8C1E419E45E180042C6E6 /* 青大円.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青大円.png"; sourceTree = "<group>"; };
 		96B8C1E619E463110042C6E6 /* 再生ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "再生ボタン.png"; sourceTree = "<group>"; };
 		96B8C1E819E4682F0042C6E6 /* 矢印.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "矢印.png"; sourceTree = "<group>"; };
+		96C9FF6619F7A42C004DDB56 /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
+		96C9FF6819F7A436004DDB56 /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
+		96C9FF6A19F7A443004DDB56 /* musicalnote_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicalnote_big.png; sourceTree = "<group>"; };
+		96C9FF6C19F7A494004DDB56 /* 停止ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "停止ボタン.png"; sourceTree = "<group>"; };
 		96E9C09019E4421000C7A502 /* RhythWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhythWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E9C09419E4421000C7A502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E9C09519E4421000C7A502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +60,6 @@
 		96E9C0A519E4421000C7A502 /* RhythWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E9C0AA19E4421000C7A502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E9C0AB19E4421000C7A502 /* RhythWalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythWalkTests.swift; sourceTree = "<group>"; };
-		96E9C0B519E4461400C7A502 /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_left.png; path = "../Rhyth-Walk/Rhyth-Walk/Images.xcassets/AppResources-RW/button_left.png"; sourceTree = "<group>"; };
-		96E9C0B719E4463400C7A502 /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_right.png; path = "../Rhyth-Walk/Rhyth-Walk/Images.xcassets/AppResources-RW/button_right.png"; sourceTree = "<group>"; };
-		96E9C0B919E4466000C7A502 /* musicalnote_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = musicalnote_big.png; path = "../Rhyth-Walk/Rhyth-Walk/Images.xcassets/AppResources-RW/musicalnote_big.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +94,12 @@
 				9680CB4719F0D0090095763E /* CoreGraphics.framework */,
 				9680CB4519F0CF2B0095763E /* MediaPlayer.framework */,
 				96B8C1E819E4682F0042C6E6 /* 矢印.png */,
+				96C9FF6C19F7A494004DDB56 /* 停止ボタン.png */,
 				96B8C1E619E463110042C6E6 /* 再生ボタン.png */,
 				96B8C1E419E45E180042C6E6 /* 青大円.png */,
-				96153A0919E4510700F89FE9 /* 停止ボタン.png */,
-				96E9C0B919E4466000C7A502 /* musicalnote_big.png */,
-				96E9C0B719E4463400C7A502 /* button_right.png */,
-				96E9C0B519E4461400C7A502 /* button_left.png */,
+				96C9FF6619F7A42C004DDB56 /* button_left.png */,
+				96C9FF6A19F7A443004DDB56 /* musicalnote_big.png */,
+				96C9FF6819F7A436004DDB56 /* button_right.png */,
 				96E9C09219E4421000C7A502 /* RhythWalk */,
 				96E9C0A819E4421000C7A502 /* RhythWalkTests */,
 				96E9C09119E4421000C7A502 /* Products */,
@@ -233,16 +233,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96E9C0B819E4463400C7A502 /* button_right.png in Resources */,
+				96C9FF6719F7A42C004DDB56 /* button_left.png in Resources */,
 				96B8C1E519E45E180042C6E6 /* 青大円.png in Resources */,
 				96B8C1E719E463110042C6E6 /* 再生ボタン.png in Resources */,
-				96E9C0B619E4461400C7A502 /* button_left.png in Resources */,
 				96E9C09B19E4421000C7A502 /* Main.storyboard in Resources */,
+				96C9FF6919F7A436004DDB56 /* button_right.png in Resources */,
 				96B8C1E919E4682F0042C6E6 /* 矢印.png in Resources */,
 				96E9C0A019E4421000C7A502 /* LaunchScreen.xib in Resources */,
 				96E9C09D19E4421000C7A502 /* Images.xcassets in Resources */,
-				96E9C0BA19E4466000C7A502 /* musicalnote_big.png in Resources */,
-				96153A0A19E4510700F89FE9 /* 停止ボタン.png in Resources */,
+				96C9FF6B19F7A443004DDB56 /* musicalnote_big.png in Resources */,
+				96C9FF6D19F7A494004DDB56 /* 停止ボタン.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
