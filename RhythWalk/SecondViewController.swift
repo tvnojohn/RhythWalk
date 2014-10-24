@@ -134,6 +134,8 @@ class SecondViewController: UIViewController {
         seasonSlider.addTarget(self, action: "seasonSlider:", forControlEvents: UIControlEvents.ValueChanged)
         
         self.view.addSubview(seasonSlider)
+        
+        
     }
     
     func setFin(sender: UIButton){

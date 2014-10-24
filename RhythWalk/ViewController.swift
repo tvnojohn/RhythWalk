@@ -9,8 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController{
-    
+    var canvasView_: UIImageView!
+    var roundLabel: UILabel!
     var active = false
+    var seekRadian: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,7 @@ class ViewController: UIViewController{
         let buckButton   = UIButton()
         buckButton.tag = 4
         buckButton.frame = CGRectMake(0, 0, 75, 75)
-        buckButton.layer.position = CGPoint(x:35, y:self.view.frame.height/2)
+        buckButton.layer.position = CGPoint(x:25, y:self.view.frame.height/2)
         buckButton.setImage(UIImage(named: "button_left.png") as UIImage, forState: .Normal)
         buckButton.addTarget(self, action: "buck:", forControlEvents:.TouchUpInside)
         
@@ -72,6 +74,19 @@ class ViewController: UIViewController{
         myImageView.image = myImage
         myImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
         self.view.addSubview(myImageView)
+        
+        // 円のシークバーを作成
+        roundLabel = UILabel(frame: CGRectMake(0,0,20,20))
+        roundLabel.backgroundColor = UIColor.greenColor()
+        roundLabel.layer.masksToBounds = true
+        roundLabel.layer.cornerRadius = 10.0
+        roundLabel.textColor = UIColor.whiteColor()
+        roundLabel.shadowColor = UIColor.grayColor()
+        roundLabel.font = UIFont.systemFontOfSize(CGFloat(30))
+        roundLabel.textAlignment = NSTextAlignment.Center
+        roundLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 185)
+        self.view.addSubview(roundLabel)
+
     }
 
     func tapped(sender: UIButton){
@@ -108,6 +123,21 @@ class ViewController: UIViewController{
         
         // Viewの移動する.
         self.presentViewController(mySecondViewController, animated: true, completion: nil)
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        super.touchesEnded(touches, withEvent: event)
+        // シングルタッチの場合
+        var radius:Float = 90.0
+        var touch: UITouch = touches.anyObject() as UITouch
+        var point: CGPoint = touch.locationInView(self.canvasView_)
+        var a:CGFloat
+        var round_x = point.x-self.view.bounds.width/2
+        var round_y = point.y-self.view.bounds.height/2
+        a = (round_x * round_x + round_y * round_y)/10000
+        a = sqrt(a)
+        var round_z = (round_y)/a + self.view.bounds.height/2
+        roundLabel.layer.position = CGPoint(x: (round_x)/a + self.view.bounds.width/2,y: (round_y)/a + self.view.bounds.height/2)
     }
     
     
