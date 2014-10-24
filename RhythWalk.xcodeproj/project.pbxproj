@@ -15,6 +15,7 @@
 		96B8C1E519E45E180042C6E6 /* 青大円.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B8C1E419E45E180042C6E6 /* 青大円.png */; };
 		96B8C1E719E463110042C6E6 /* 再生ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B8C1E619E463110042C6E6 /* 再生ボタン.png */; };
 		96B8C1E919E4682F0042C6E6 /* 矢印.png in Resources */ = {isa = PBXBuildFile; fileRef = 96B8C1E819E4682F0042C6E6 /* 矢印.png */; };
+		96BD63CB19F9731100E18209 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BD63CA19F9731100E18209 /* SecondViewController.swift */; };
 		96C9FF6719F7A42C004DDB56 /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C9FF6619F7A42C004DDB56 /* button_left.png */; };
 		96C9FF6919F7A436004DDB56 /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C9FF6819F7A436004DDB56 /* button_right.png */; };
 		96C9FF6B19F7A443004DDB56 /* musicalnote_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 96C9FF6A19F7A443004DDB56 /* musicalnote_big.png */; };
@@ -46,6 +47,7 @@
 		96B8C1E419E45E180042C6E6 /* 青大円.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青大円.png"; sourceTree = "<group>"; };
 		96B8C1E619E463110042C6E6 /* 再生ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "再生ボタン.png"; sourceTree = "<group>"; };
 		96B8C1E819E4682F0042C6E6 /* 矢印.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "矢印.png"; sourceTree = "<group>"; };
+		96BD63CA19F9731100E18209 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		96C9FF6619F7A42C004DDB56 /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
 		96C9FF6819F7A436004DDB56 /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
 		96C9FF6A19F7A443004DDB56 /* musicalnote_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicalnote_big.png; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				96E9C09519E4421000C7A502 /* AppDelegate.swift */,
 				96E9C09719E4421000C7A502 /* ViewController.swift */,
+				96BD63CA19F9731100E18209 /* SecondViewController.swift */,
 				96E9C09919E4421000C7A502 /* Main.storyboard */,
 				96E9C09C19E4421000C7A502 /* Images.xcassets */,
 				96E9C09E19E4421000C7A502 /* LaunchScreen.xib */,
@@ -262,6 +265,7 @@
 			files = (
 				96E9C09819E4421000C7A502 /* ViewController.swift in Sources */,
 				96E9C09619E4421000C7A502 /* AppDelegate.swift in Sources */,
+				96BD63CB19F9731100E18209 /* SecondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

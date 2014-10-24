@@ -16,24 +16,62 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // *** UIButton with Image ***
+        self.view.backgroundColor = UIColor.blackColor()
+        
+        
+        // 再生停止ボタン
         let image = UIImage(named: "停止ボタン.png") as UIImage
         let image2 = UIImage(named: "再生ボタン.png") as UIImage
-        let imageButton   = UIButton()
-        imageButton.tag = 4
-        imageButton.frame = CGRectMake(0, 0, 50, 50)
-        imageButton.layer.position = CGPoint(x: self.view.frame.width/2, y:500)
+        let playButton   = UIButton()
+        playButton.tag = 4
+        playButton.frame = CGRectMake(0, 0, 50, 50)
+        playButton.layer.position = CGPoint(x: self.view.frame.width/2, y:500)
         if(active==false){
-            imageButton.setImage(image2, forState: .Normal)
+            playButton.setImage(image2, forState: .Normal)
         }
         else{
-            imageButton.setImage(image, forState: .Normal)
+            playButton.setImage(image, forState: .Normal)
         }
-        imageButton.addTarget(self, action: "tapped:", forControlEvents:.TouchUpInside)
+        playButton.addTarget(self, action: "tapped:", forControlEvents:.TouchUpInside)
         
-        self.view.addSubview(imageButton)
+        self.view.addSubview(playButton)
 
+        // スキップボタン
+        let skipButton   = UIButton()
+        skipButton.tag = 4
+        skipButton.frame = CGRectMake(0, 0, 75, 75)
+        skipButton.layer.position = CGPoint(x:295, y:self.view.frame.height/2)
+        skipButton.setImage(UIImage(named: "button_right.png") as UIImage, forState: .Normal)
+        skipButton.addTarget(self, action: "skip:", forControlEvents:.TouchUpInside)
+        
+        self.view.addSubview(skipButton)
 
+        // バックボタン
+        let buckButton   = UIButton()
+        buckButton.tag = 4
+        buckButton.frame = CGRectMake(0, 0, 75, 75)
+        buckButton.layer.position = CGPoint(x:35, y:self.view.frame.height/2)
+        buckButton.setImage(UIImage(named: "button_left.png") as UIImage, forState: .Normal)
+        buckButton.addTarget(self, action: "buck:", forControlEvents:.TouchUpInside)
+        
+        self.view.addSubview(buckButton)
+        
+        // 設定ボタン
+        let setButton   = UIButton()
+        setButton.tag = 4
+        setButton.frame = CGRectMake(0, 0, 75, 75)
+        setButton.layer.position = CGPoint(x:self.view.frame.width-30, y:self.view.frame.height-50)
+        setButton.setImage(UIImage(named: "矢印.png") as UIImage, forState: .Normal)
+        setButton.addTarget(self, action: "set:", forControlEvents:.TouchUpInside)
+        
+        self.view.addSubview(setButton)
+
+        // 音符
+        let myImageView: UIImageView = UIImageView(frame: CGRectMake(0,0,128,128))
+        let myImage = UIImage(named: "musicalnote_big.png")
+        myImageView.image = myImage
+        myImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
+        self.view.addSubview(myImageView)
     }
 
     func tapped(sender: UIButton){
@@ -51,6 +89,25 @@ class ViewController: UIViewController{
         }
         self.view.addSubview(sender)
         //println("Tapped Button Tag:\(sender.tag)")
+    }
+    
+    func skip(sender: UIButton){
+        
+    }
+    
+    func buck(sender: UIButton){
+        
+    }
+    
+    func set(sender: UIButton){
+        // 遷移するViewを定義する.
+        let mySecondViewController: UIViewController = SecondViewController()
+        
+        // アニメーションを設定する.
+        mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+        
+        // Viewの移動する.
+        self.presentViewController(mySecondViewController, animated: true, completion: nil)
     }
     
     
