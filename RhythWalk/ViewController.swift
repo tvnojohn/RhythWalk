@@ -12,7 +12,9 @@ class ViewController: UIViewController{
     var canvasView_: UIImageView!
     var roundLabel: UILabel!
     var active = false
+    var touchCheck = false
     var seekRadian: CGFloat = 0
+    var rotate:CGFloat = 1.0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +43,8 @@ class ViewController: UIViewController{
         // スキップボタン
         let skipButton   = UIButton()
         skipButton.tag = 4
-        skipButton.frame = CGRectMake(0, 0, 75, 75)
-        skipButton.layer.position = CGPoint(x:295, y:self.view.frame.height/2)
+        skipButton.frame = CGRectMake(0, 0, 60, 60)
+        skipButton.layer.position = CGPoint(x:298, y:self.view.frame.height/2)
         skipButton.setImage(UIImage(named: "button_right.png") as UIImage, forState: .Normal)
         skipButton.addTarget(self, action: "skip:", forControlEvents:.TouchUpInside)
         
@@ -51,8 +53,8 @@ class ViewController: UIViewController{
         // バックボタン
         let buckButton   = UIButton()
         buckButton.tag = 4
-        buckButton.frame = CGRectMake(0, 0, 75, 75)
-        buckButton.layer.position = CGPoint(x:25, y:self.view.frame.height/2)
+        buckButton.frame = CGRectMake(0, 0, 60, 60)
+        buckButton.layer.position = CGPoint(x:22, y:self.view.frame.height/2)
         buckButton.setImage(UIImage(named: "button_left.png") as UIImage, forState: .Normal)
         buckButton.addTarget(self, action: "buck:", forControlEvents:.TouchUpInside)
         
@@ -69,11 +71,20 @@ class ViewController: UIViewController{
         self.view.addSubview(setButton)
 
         // 音符
-        let myImageView: UIImageView = UIImageView(frame: CGRectMake(0,0,128,128))
-        let myImage = UIImage(named: "musicalnote_big.png")
+        let myImageView: UIImageView = UIImageView(frame: CGRectMake(0,0,190,180))
+        let myImage = UIImage(named: "musicalnote_shadow.png")
         myImageView.image = myImage
         myImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
+        myImageView.alpha = 0.5
+        myImageView.transform = CGAffineTransformScale(myImageView.transform, rotate, 1.0)
         self.view.addSubview(myImageView)
+        
+        // シークバー
+        let seekbarView: UIImageView = UIImageView(frame: CGRectMake(0,0,250,250))
+        let seekbarImage = UIImage(named: "seekbar1.png")
+        seekbarView.image = seekbarImage
+        seekbarView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
+        self.view.addSubview(seekbarView)
         
         // 円のシークバーを作成
         roundLabel = UILabel(frame: CGRectMake(0,0,20,20))
@@ -117,27 +128,58 @@ class ViewController: UIViewController{
     func set(sender: UIButton){
         // 遷移するViewを定義する.
         let mySecondViewController: UIViewController = SecondViewController()
-        
+            
         // アニメーションを設定する.
-        mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+        //mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
         
         // Viewの移動する.
         self.presentViewController(mySecondViewController, animated: true, completion: nil)
     }
     
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        // シークバーに触れているかチェック
+        let touch :UITouch = touches.anyObject() as UITouch
+        let currentPoint = touch.locationInView(self.canvasView_)
+        if(currentPoint.x > roundLabel.layer.position.x - 10 && currentPoint.x < roundLabel.layer.position.x + 20){
+            if(currentPoint.y > roundLabel.layer.position.y - 10 && currentPoint.y < roundLabel.layer.position.y + 20){
+                touchCheck = true
+            }
+        }
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        if(touchCheck == false){
+            return;
+        }
+        //シークバーをタッチしている座標に動かす
+        let touch :UITouch = touches.anyObject() as UITouch
+        let currentPoint = touch.locationInView(self.canvasView_)
+        var bent:CGFloat
+        var round_x = currentPoint.x-self.view.bounds.width/2
+        var round_y = currentPoint.y-self.view.bounds.height/2
+        bent = (round_x * round_x + round_y * round_y)/10000
+        bent = sqrt(bent)
+        var round_z = (round_y)/bent + self.view.bounds.height/2
+        roundLabel.layer.position = CGPoint(x: (round_x)/bent + self.view.bounds.width/2,y: (round_y)/bent + self.view.bounds.height/2)
+    }
+    
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         super.touchesEnded(touches, withEvent: event)
-        // シングルタッチの場合
-        var radius:Float = 90.0
+        
+        if(touchCheck == false){
+            return;
+        }
+        // タッチが終わった時の座標にシークバーを移動
         var touch: UITouch = touches.anyObject() as UITouch
         var point: CGPoint = touch.locationInView(self.canvasView_)
-        var a:CGFloat
+        var bent:CGFloat
         var round_x = point.x-self.view.bounds.width/2
         var round_y = point.y-self.view.bounds.height/2
-        a = (round_x * round_x + round_y * round_y)/10000
-        a = sqrt(a)
-        var round_z = (round_y)/a + self.view.bounds.height/2
-        roundLabel.layer.position = CGPoint(x: (round_x)/a + self.view.bounds.width/2,y: (round_y)/a + self.view.bounds.height/2)
+        bent = (round_x * round_x + round_y * round_y)/10000
+        bent = sqrt(bent)
+        var round_z = (round_y)/bent + self.view.bounds.height/2
+        roundLabel.layer.position = CGPoint(x: (round_x)/bent + self.view.bounds.width/2,y: (round_y)/bent + self.view.bounds.height/2)
+        touchCheck = false
     }
     
     
