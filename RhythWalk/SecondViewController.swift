@@ -27,11 +27,12 @@ class SecondViewController: UIViewController {
         self.view.addSubview(setFinButton)
         
         //Timeラベル
-        let timeLabel: UILabel = UILabel(frame: CGRectMake(0,0,39,22))
-        timeLabel.text = "Time"
+        let timeLabel: UILabel = UILabel(frame: CGRectMake(0,0, 100, 22))
+        timeLabel.text = "Night"
+        //timeLabel.text = "Time"
         timeLabel.textColor = UIColor.redColor()
         timeLabel.shadowColor = UIColor.whiteColor()
-        timeLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 161)
+        timeLabel.layer.position = CGPoint(x: self.view.bounds.width/2 ,y: 161)
         self.view.addSubview(timeLabel)
         
         //timeSliderを作成
@@ -54,8 +55,9 @@ class SecondViewController: UIViewController {
         self.view.addSubview(timeSlider)
         
         //weatherラベル
-        let weatherLabel: UILabel = UILabel(frame: CGRectMake(0,0,65,22))
-        weatherLabel.text = "Weather"
+        let weatherLabel: UILabel = UILabel(frame: CGRectMake(0,0,100,22))
+        weatherLabel.text = "Sunny"
+        //weatherLabel.text = "Weather"
         weatherLabel.textColor = UIColor.purpleColor()
         weatherLabel.shadowColor = UIColor.whiteColor()
         weatherLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 251)
@@ -80,8 +82,9 @@ class SecondViewController: UIViewController {
         self.view.addSubview(weatherSlider)
         
         //placeラベル
-        let placeLabel: UILabel = UILabel(frame: CGRectMake(0,0,44,22))
-        placeLabel.text = "Place"
+        let placeLabel: UILabel = UILabel(frame: CGRectMake(0,0,100,22))
+        //placeLabel.text = "Place"
+        placeLabel.text = "Sea"
         placeLabel.textColor = UIColor.greenColor()
         placeLabel.shadowColor = UIColor.whiteColor()
         placeLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 341)
@@ -107,8 +110,9 @@ class SecondViewController: UIViewController {
         self.view.addSubview(placeSlider)
         
         //seasonラベル
-        let seasonLabel: UILabel = UILabel(frame: CGRectMake(0,0,59,22))
-        seasonLabel.text = "Season"
+        let seasonLabel: UILabel = UILabel(frame: CGRectMake(0,0,100,22))
+        seasonLabel.text = "Summer"
+        //seasonLabel.text = "Season"
         seasonLabel.textColor = UIColor.blueColor()
         seasonLabel.shadowColor = UIColor.whiteColor()
         seasonLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 436)

@@ -42,13 +42,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RhythWalk/ViewController.swift"
-            timestampString = "436242990.237996"
+            timestampString = "436417251.703321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RhythWalk/ViewController.swift"
+            timestampString = "436425911.601274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "touchesBegan(_:withEvent:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RhythWalk.ViewController.touchesBegan (RhythWalk.ViewController)(ObjectiveC.NSSet, withEvent : ObjectiveC.UIEvent) -&gt; ()"
+                  moduleName = "RhythWalk"
+                  urlString = "file:///Users/murakamijun/Desktop/RhythWalk/RhythWalk/ViewController.swift"
+                  timestampString = "436428065.142994"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RhythWalk.ViewController.touchesBegan (RhythWalk.ViewController)(ObjectiveC.NSSet, withEvent : ObjectiveC.UIEvent) -&gt; ()"
+                  moduleName = "RhythWalk"
+                  urlString = "file:///Users/murakamijun/Desktop/RhythWalk/RhythWalk/ViewController.swift"
+                  timestampString = "436428065.149434"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "356">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
