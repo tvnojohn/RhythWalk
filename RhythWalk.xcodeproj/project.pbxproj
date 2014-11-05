@@ -27,6 +27,10 @@
 		96E9C09D19E4421000C7A502 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09C19E4421000C7A502 /* Images.xcassets */; };
 		96E9C0A019E4421000C7A502 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E9C09E19E4421000C7A502 /* LaunchScreen.xib */; };
 		96E9C0AC19E4421000C7A502 /* RhythWalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9C0AB19E4421000C7A502 /* RhythWalkTests.swift */; };
+		AFCA9CFC1A09C5560076E308 /* PlayMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA9CFB1A09C5560076E308 /* PlayMusic.swift */; };
+		AFCA9CFE1A09C5AD0076E308 /* SongQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA9CFD1A09C5AD0076E308 /* SongQuery.swift */; };
+		AFCA9D001A09C6280076E308 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCA9CFF1A09C6280076E308 /* AVFoundation.framework */; };
+		AFCA9D021A09C6380076E308 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCA9D011A09C6380076E308 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		96E9C0A519E4421000C7A502 /* RhythWalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhythWalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E9C0AA19E4421000C7A502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E9C0AB19E4421000C7A502 /* RhythWalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhythWalkTests.swift; sourceTree = "<group>"; };
+		AFCA9CFB1A09C5560076E308 /* PlayMusic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayMusic.swift; sourceTree = "<group>"; };
+		AFCA9CFD1A09C5AD0076E308 /* SongQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongQuery.swift; sourceTree = "<group>"; };
+		AFCA9CFF1A09C6280076E308 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AFCA9D011A09C6380076E308 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCA9D021A09C6380076E308 /* AudioToolbox.framework in Frameworks */,
+				AFCA9D001A09C6280076E308 /* AVFoundation.framework in Frameworks */,
 				962D221619F6CBDB00890796 /* SpriteKit.framework in Frameworks */,
 				9680CB4C19F0D02F0095763E /* UIKit.framework in Frameworks */,
 				9680CB4A19F0D01C0095763E /* Foundation.framework in Frameworks */,
@@ -92,6 +102,8 @@
 		96E9C08719E4421000C7A502 = {
 			isa = PBXGroup;
 			children = (
+				AFCA9D011A09C6380076E308 /* AudioToolbox.framework */,
+				AFCA9CFF1A09C6280076E308 /* AVFoundation.framework */,
 				962D221519F6CBDA00890796 /* SpriteKit.framework */,
 				9680CB4B19F0D02F0095763E /* UIKit.framework */,
 				9680CB4919F0D01C0095763E /* Foundation.framework */,
@@ -126,6 +138,8 @@
 				96E9C09519E4421000C7A502 /* AppDelegate.swift */,
 				96E9C09719E4421000C7A502 /* ViewController.swift */,
 				96BD63CA19F9731100E18209 /* SecondViewController.swift */,
+				AFCA9CFB1A09C5560076E308 /* PlayMusic.swift */,
+				AFCA9CFD1A09C5AD0076E308 /* SongQuery.swift */,
 				96E9C09919E4421000C7A502 /* Main.storyboard */,
 				96E9C09C19E4421000C7A502 /* Images.xcassets */,
 				96E9C09E19E4421000C7A502 /* LaunchScreen.xib */,
@@ -268,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96E9C09819E4421000C7A502 /* ViewController.swift in Sources */,
+				AFCA9CFC1A09C5560076E308 /* PlayMusic.swift in Sources */,
+				AFCA9CFE1A09C5AD0076E308 /* SongQuery.swift in Sources */,
 				96E9C09619E4421000C7A502 /* AppDelegate.swift in Sources */,
 				96BD63CB19F9731100E18209 /* SecondViewController.swift in Sources */,
 			);
@@ -395,6 +411,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RhythWalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -409,6 +426,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RhythWalk/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

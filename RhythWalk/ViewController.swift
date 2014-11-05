@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController{
     var canvasView_: UIImageView!
     var roundLabel: UILabel!
@@ -17,6 +18,9 @@ class ViewController: UIViewController{
     var rotate:CGFloat = 1.0;
     var seekRadius: CGFloat = 0
     var b:CGFloat = 270
+    var player: PlayMusic = PlayMusic()
+    var sec: Int = 1
+    var secItem: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,7 @@ class ViewController: UIViewController{
         let playButton   = UIButton()
         playButton.tag = 4
         playButton.frame = CGRectMake(0, 0, 50, 50)
-        playButton.layer.position = CGPoint(x: self.view.frame.width/2, y:500)
+        playButton.layer.position = CGPoint(x: self.view.frame.width/2, y:self.view.frame.height*0.75)//500)
         if(active==false){
             playButton.setImage(image2, forState: .Normal)
         }
@@ -105,6 +109,7 @@ class ViewController: UIViewController{
         
         NSTimer.scheduledTimerWithTimeInterval(0.4,target:self,selector:"seekMove", userInfo: nil, repeats: true)
         
+        player.musicUrl(sec, secitem: 1)
     }
 
     func tapped(sender: UIButton){
@@ -113,10 +118,13 @@ class ViewController: UIViewController{
         if(active==false){
             sender.setImage(image, forState: .Normal)
             active = true
+            
+            player.play()
         }
         else{
             sender.setImage(image2, forState: .Normal)
             active = false
+            player.pause()
         }
     }
     
