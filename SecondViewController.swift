@@ -28,8 +28,8 @@ class SecondViewController: UIViewController {
         
         //Timeラベル
         let timeLabel: UILabel = UILabel(frame: CGRectMake(0,0, 100, 22))
-        timeLabel.text = "Night"
-        //timeLabel.text = "Time"
+        //timeLabel.text = "Night"
+        timeLabel.text = "Time"
         timeLabel.textColor = UIColor.redColor()
         timeLabel.shadowColor = UIColor.whiteColor()
         timeLabel.layer.position = CGPoint(x: self.view.bounds.width/2 ,y: 161)
@@ -56,8 +56,8 @@ class SecondViewController: UIViewController {
         
         //weatherラベル
         let weatherLabel: UILabel = UILabel(frame: CGRectMake(0,0,100,22))
-        weatherLabel.text = "Sunny"
-        //weatherLabel.text = "Weather"
+        //weatherLabel.text = "Sunny"
+        weatherLabel.text = "Weather"
         weatherLabel.textColor = UIColor.purpleColor()
         weatherLabel.shadowColor = UIColor.whiteColor()
         weatherLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 251)
@@ -83,8 +83,8 @@ class SecondViewController: UIViewController {
         
         //placeラベル
         let placeLabel: UILabel = UILabel(frame: CGRectMake(0,0,100,22))
-        //placeLabel.text = "Place"
-        placeLabel.text = "Sea"
+        placeLabel.text = "Place"
+        //placeLabel.text = "Sea"
         placeLabel.textColor = UIColor.greenColor()
         placeLabel.shadowColor = UIColor.whiteColor()
         placeLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 341)
@@ -111,8 +111,8 @@ class SecondViewController: UIViewController {
         
         //seasonラベル
         let seasonLabel: UILabel = UILabel(frame: CGRectMake(0,0,100,22))
-        seasonLabel.text = "Summer"
-        //seasonLabel.text = "Season"
+        //seasonLabel.text = "Summer"
+        seasonLabel.text = "Season"
         seasonLabel.textColor = UIColor.blueColor()
         seasonLabel.shadowColor = UIColor.whiteColor()
         seasonLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 436)
