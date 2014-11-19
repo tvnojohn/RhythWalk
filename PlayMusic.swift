@@ -100,6 +100,20 @@ class PlayMusic{
         return bpm
     }
     
+    func musicTitle() -> String {
+        let songId: NSNumber = albums[currentSection].songs[currentItem].songId
+        let item: MPMediaItem = songQuery.getItem(songId)
+        let title: String = item.valueForKey(MPMediaItemPropertyTitle) as String
+        return title
+    }
+    
+    func musicArtist() -> String {
+        let songId: NSNumber = albums[currentSection].songs[currentItem].songId
+        let item: MPMediaItem = songQuery.getItem(songId)
+        let artist: String = item.valueForKey(MPMediaItemPropertyArtist) as String
+        return artist
+    }
+    
     //一つ次の曲へ移る
     func nextSong(){
         itemCount = numberOfItems(currentSection)
@@ -139,6 +153,9 @@ class PlayMusic{
     
     //再生
     func play() -> Void{
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        audio.prepareToPlay()
         audio.play()
     }
 
@@ -166,5 +183,22 @@ class PlayMusic{
         }
     }
     
+    func setPlayingTime(pos : Double) {
+        // 引数に設定された再生位置をプレイヤーに設定
+        audio.currentTime = pos
+    }
+    
+    func getPlayingTime() -> String{
+        // 引数に設定された再生位置をプレイヤーに設定
+        return formatTimeString(audio.currentTime)
+    }
+    
+    func formatTimeString(d : Double) -> String {
+        let c = Int(d)
+        let m : Int = Int(c / 60)
+        let s : Int = Int(c - m * 60)
+        let str = String(format: "%02d:%02d", m, s)
+        return str
+    }
     
 }

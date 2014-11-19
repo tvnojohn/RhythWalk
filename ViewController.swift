@@ -10,12 +10,13 @@ import UIKit
 import CoreMotion
 
 class ViewController: UIViewController{
+    
     var canvasView_: UIImageView!
     var roundLabel: UILabel!
     var active = false
     var touchCheck = false
     var seekRadian: CGFloat = 0
-    var rotate:CGFloat = 1.0;
+    var rotate:CGFloat = 1.0
     var seekRadius: CGFloat = 0
     var b:CGFloat = 270
     let player: PlayMusic = PlayMusic(sectionNum: 0,itemNum: 0)////////////////////////<=
@@ -23,13 +24,19 @@ class ViewController: UIViewController{
     
     //BPM関係
     var myStepCounter: CMStepCounter!
-    var startTime: Int64 = 0
+    var count5Time: Int64 = 0
     var bpm: NSNumber = 124
     var myStep: NSNumber! = 0
     var step: NSNumber! = 0
-    var bpm2:NSNumber = 0
+    var bpm2: NSNumber = 0
     var bpmLabel: UILabel!
     
+    var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate //AppDelegateのインスタンスを取得
+    
+    var musicTitleLabel: UILabel!
+    var playTimeLabel: UILabel!
+    var musicianNameLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +105,7 @@ class ViewController: UIViewController{
         myImageView.image = myImage
         myImageView.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.frame.height/2)
         myImageView.alpha = 10.0
-        myImageView.transform = CGAffineTransformScale(myImageView.transform, rotate, 1.0)
+        myImageView.transform = CGAffineTransformScale(myImageView.transform, 1.0, 1.0)
         self.view.addSubview(myImageView)
         
         // シークバー
@@ -120,7 +127,7 @@ class ViewController: UIViewController{
         roundLabel.layer.position = CGPoint(x: self.view.frame.width/2, y: 185)
         self.view.addSubview(roundLabel)
         
-        NSTimer.scheduledTimerWithTimeInterval(0.1,target:self,selector:"seekMove", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.1,target:self,selector:"count5Sec", userInfo: nil, repeats: true)
         
         player.musicUrl(0, item: 0)        ////////////////////////<=
         //player.musicLyrics(sec, secitem: 0)
@@ -139,16 +146,41 @@ class ViewController: UIViewController{
         
         myStepCounter.stopStepCountingUpdates()
         
-        NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:"count10Sec", userInfo: nil, repeats: true)
-        
         // BPM表示
         bpmLabel = UILabel(frame: CGRectMake(0,0, 100, 22))
-        //timeLabel.text = "Night"
-        bpmLabel.text = "BPM:"
+        //bpmLabel.text = "BPM:"
         bpmLabel.textColor = UIColor.whiteColor()
         bpmLabel.shadowColor = UIColor.whiteColor()
+        bpmLabel.textAlignment = .Center
         bpmLabel.layer.position = CGPoint(x: self.view.bounds.width/2 ,y: 50)
         self.view.addSubview(bpmLabel)
+        
+        // 曲名表示
+        musicTitleLabel = UILabel(frame: CGRectMake(0,0, 200, 22))
+        musicTitleLabel.text = player.musicTitle()
+        musicTitleLabel.textColor = UIColor.whiteColor()
+        musicTitleLabel.shadowColor = UIColor.whiteColor()
+        musicTitleLabel.textAlignment = .Center
+        musicTitleLabel.layer.position = CGPoint(x: self.view.bounds.width/2 ,y:self.view.bounds.height/2 - 30)
+        self.view.addSubview(musicTitleLabel)
+        
+        // 歌手名表示
+        musicianNameLabel = UILabel(frame: CGRectMake(0,0, 200, 22))
+        musicianNameLabel.text = player.musicArtist()
+        musicianNameLabel.textColor = UIColor.whiteColor()
+        musicianNameLabel.shadowColor = UIColor.whiteColor()
+        musicianNameLabel.textAlignment = .Center
+        musicianNameLabel.layer.position = CGPoint(x: self.view.bounds.width/2 ,y:self.view.bounds.height/2)
+        self.view.addSubview(musicianNameLabel)
+        
+        // 再生位置
+        playTimeLabel = UILabel(frame: CGRectMake(0,0, 200, 22))
+        playTimeLabel.text = "\(player.getPlayingTime())/ \(player.formatTimeString(player.musicPlayingTime()))"
+        playTimeLabel.textColor = UIColor.whiteColor()
+        playTimeLabel.shadowColor = UIColor.whiteColor()
+        playTimeLabel.textAlignment = .Center
+        playTimeLabel.layer.position = CGPoint(x: self.view.bounds.width/2 ,y:self.view.bounds.height/2 + 30)
+        self.view.addSubview(playTimeLabel)
     }
 
     //音楽再生ボタン
@@ -159,8 +191,8 @@ class ViewController: UIViewController{
             sender.setImage(image, forState: .Normal)
             musicShuffle()
             active = true
+            setSeekbarTime()
             player.play()
-            
         }
         else{
             sender.setImage(image2, forState: .Normal)
@@ -190,37 +222,64 @@ class ViewController: UIViewController{
             //println(rotate);
         }
         //roundLabel.layer.position = CGPoint(x: self.view.bounds.width/2 + rotate/1000, y: 185
-        if((b >= 390 && b<400) || (b >= 510 && b<520) || (b >= 630 && b<640)){
-            if(bpm<=bpm2-8 || bpm >= bpm2+8){
-                player.nextSong()
-                b = 270
-                musicShuffle()
-                player.play()
-            }
+    
+        if(b >= 630){
+            //if(bpm<=bpm2-8 || bpm >= bpm2+8){
+            player.nextSong()
+            b = 270
+            musicShuffle()
+            player.play()
+            //}
         }
-        if(b >= 630){b=270}
+        playTimeLabel.text = "\(player.getPlayingTime())/ \(player.formatTimeString(player.musicPlayingTime()))"
     }
     
     //シークバーの角度を求める
     func radianCalc(){
         //シークバーの角度を求める
+        var ladiusX:CGFloat = 0
         var PI = CGFloat(M_PI)
-        var ladiusX = acos((roundLabel.layer.position.x - self.view.frame.width/2) / seekRadius) / PI * 180
-        if(roundLabel.layer.position.x <= self.view.frame.width/2 + seekRadius && roundLabel.layer.position.x >= self.view.frame.width/2){
-            if(roundLabel.layer.position.y >= self.view.frame.height/2 - seekRadius && roundLabel.layer.position.y <= self.view.frame.height/2){
-                b =  ladiusX
-            }else{
-                b =  90+ladiusX
+        if(roundLabel.layer.position.y <= self.view.frame.height/2 + 10 && roundLabel.layer.position.y > self.view.frame.height/2 - 10){
+            if(roundLabel.layer.position.x > self.view.frame.width/2 + seekRadius - 5){
+                ladiusX = 360
+                b = 360
+            }else if(roundLabel.layer.position.x < self.view.frame.width/2 - seekRadius + 5){
+                ladiusX = 540
+                b = 540
             }
         }else{
-            if(roundLabel.layer.position.y <= self.view.frame.height/2 + seekRadius && roundLabel.layer.position.y >= self.view.frame.height/2){
-                b =  90+ladiusX
+            ladiusX = acos((roundLabel.layer.position.x - self.view.frame.width/2) / seekRadius) / PI * 180
+            println("ladiusX:\(ladiusX)")
+            if(roundLabel.layer.position.x <= self.view.frame.width/2 + seekRadius && roundLabel.layer.position.x >= self.view.frame.width/2){
+                if(roundLabel.layer.position.y >= self.view.frame.height/2 - seekRadius - 5 && roundLabel.layer.position.y <= self.view.frame.height/2){
+                    b =  360 - ladiusX
+                }else{
+                    b = ladiusX + 360
+                }
             }else{
-                b =  180+ladiusX
+                if(roundLabel.layer.position.y <= self.view.frame.height/2 + seekRadius + 5 && roundLabel.layer.position.y > self.view.frame.height/2){
+                    b =  ladiusX + 360
+                }else{
+                    b =  720 - ladiusX
+                }
+                
             }
-        }
-        println(b);
 
+        }
+    
+        println(b);
+        setSeekbarTime()
+    }
+    
+    //音楽再生位置の変更
+    func setSeekbarTime(){
+        var g:NSNumber = 0
+        if(b < 270){
+            g = NSNumber(float: Float(b + 90) / 360 * player.musicPlayingTime())
+        }else{
+            g = NSNumber(float: Float(b - 270) / 360 * player.musicPlayingTime())
+        }
+        player.setPlayingTime(g)
     }
     
     //音楽を次の曲に
@@ -242,6 +301,8 @@ class ViewController: UIViewController{
             tapped(playButton)
         }
         player.previousSong()
+        musicTitleLabel.text = player.musicTitle()
+        musicianNameLabel.text = player.musicArtist()
         player.play()
     }
     
@@ -249,7 +310,7 @@ class ViewController: UIViewController{
     func set(sender: UIButton){
         // 遷移するViewを定義する.
         let mySecondViewController: UIViewController = SecondViewController()
-            
+        
         // アニメーションを設定する.
         //mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
         
@@ -310,45 +371,37 @@ class ViewController: UIViewController{
         var round_y = point.y-self.view.frame.height/2
         bent = (round_x * round_x + round_y * round_y)/10000
         bent = sqrt(bent)
-        var round_z = (round_y)/bent + self.view.bounds.height/2
         roundLabel.layer.position = CGPoint(x: (round_x)/bent + self.view.frame.width/2,y: (round_y)/bent + self.view.frame.height/2)
         roundLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
         touchCheck = false
         radianCalc()
     }
     
-    func count10Sec(){
-        startTime = startTime + 1
-        println(startTime)
-        if(startTime==5){
-            myBPM()
-            startTime = 0
+    //5秒カウントする
+    func count5Sec(){
+        seekMove()
+        if(appDelegate.mySituation.BPMCheck == true){
+            count5Time = count5Time + 1
+            if(count5Time==50){
+                myBPM()
+                count5Time = 0
+            }
+        }else{
+            bpm = 0
+            count5Time = 49
+            bpmLabel.text = " "
         }
     }
     
+    //BPMの計算
     func myBPM() ->Void{
         bpm = 12 * (myStep - step)
         step = myStep
-        println(bpm)
+        //println(bpm)
         bpmLabel.text = ("BPM:\(bpm)")
-        
-        /*if(bpm > 195){}
-        else if(bpm > 185){}
-        else if(bpm > 175){}
-        else if(bpm > 165){}
-        else if(bpm > 155){}
-        else if(bpm > 145){}
-        else if(bpm > 135){}
-        else if(bpm > 125){}
-        else if(bpm > 115){}
-        else if(bpm > 105){}
-        else if(bpm > 95){}
-        else if(bpm > 85){}
-        else if(bpm > 75){}
-        else if(bpm > 65){}
-        else{}*/
     }
     
+    //BPMと一致した曲にする
     func musicShuffle(){
         if(bpm != 0 || (bpm > 79 && bpm < 210)){
             while(player.musicBPM() >= bpm + 8 || player.musicBPM() <= bpm - 7) {
@@ -360,6 +413,8 @@ class ViewController: UIViewController{
         println(bpm)
         println(player.musicBPM())
         bpm2 = player.musicBPM()
+        musicTitleLabel.text = player.musicTitle()
+        musicianNameLabel.text = player.musicArtist()
     }
     
     override func didReceiveMemoryWarning() {
