@@ -22,17 +22,19 @@ class PlayMusic{
     var sectionCount: Int = 0
     var currentSection: Int = 0
     var currentItem: Int = 0
+    var albumsRow: [AlbumInfo] = []
+    var weather: GetWeather = GetWeather()
     
     //var sect: Int
     //var secitem: Int
     
     init(sectionNum: Int, itemNum: Int){
         albums = songQuery.get()
-        //    self.title = "Songs"
+        albumsRow = albums
         sectionCount = albums.count
         
-        currentSection = sectionNum
-        currentItem = itemNum
+        currentSection = 0//sectionNum
+        currentItem = 0//itemNum
     }
     
     
@@ -46,16 +48,6 @@ class PlayMusic{
         return albums[section].songs.count
     }
     
-//    func tableView( tableView: UITableView?, cellForRowAtIndexPath indexPath:NSIndexPath! ) -> UITableViewCell! {
-//        
-//        let cell: UITableViewCell = UITableViewCell( style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell" )
-//        
-//        cell.textLabel.text = albums[indexPath.section].songs[indexPath.row].songTitle
-//        cell.detailTextLabel.text = albums[indexPath.section].songs[indexPath.row].artistName
-//        
-//        return cell;
-//    }
-    
     // sectionのタイトル
     func tableView( tableView: UITableView?, titleForHeaderInSection section: Int ) -> String {
         
@@ -64,16 +56,10 @@ class PlayMusic{
     
     //sectはsection（アルバム）で、secitemはアルバムの何番目か
     func musicUrl(var section: Int, var item: Int) -> Void {
-//        if section != nil && item != nil{}else{section = currentSection;item = currentItem}
-//        var url: NSURL = NSURL.URLWithString("")
-        //for(var section: Int = sect; url.isEqual(nil) == true ; section++){
         let songId: NSNumber = albums[section].songs[item].songId
         let item: MPMediaItem = songQuery.getItem(songId)
         let url: NSURL = item.valueForProperty(MPMediaItemPropertyAssetURL) as NSURL
-        //}
-        //let url2 = url
         audio = AVAudioPlayer(contentsOfURL: url, error: nil)
-        //return url
     }
     
     //歌詞を返す（ただし登録されいるものに限る）
@@ -112,6 +98,46 @@ class PlayMusic{
         let item: MPMediaItem = songQuery.getItem(songId)
         let artist: String = item.valueForKey(MPMediaItemPropertyArtist) as String
         return artist
+    }
+    
+    func listFromWeather() -> Void {
+        albums = songQuery.getListFromWeather(albumsRow,w: weather.chooseWeather2())
+        //albums = songQuery.removeSongs(albumsRow)
+        
+        //        let albums2: [SongInfo] = []
+        //        for i in 0..<numberOfSections() {
+        //            for j in 0..<numberOfItems(i) {
+        //                if(albums[i].songs[j].weather == "Sunny"){
+        //                    albums2.append(albums[i].songs[j])
+        //                }
+        //            }
+        //        }
+    }
+    
+    func printSongInfo() -> Void{
+        //self.setWeather(currentSection, item: currentItem, weather: "Sunny")
+        //let songId: NSNumber = albums[currentSection].songs[currentItem].songId
+        //println(albums[currentSection].albumTitle)
+        println(albums[currentSection].songs[currentItem].artistName)
+        //println(albums[currentSection].songs[currentItem].songId)
+        println(albums[currentSection].songs[currentItem].songTitle)
+        println(albums[currentSection].songs[currentItem].weather)
+    }
+
+    func setWeather(section: Int, item: Int, weather: String) -> Void {
+        albums[section].songs[item].weather = weather
+    }
+    
+    func testSetWeather() -> Void {
+        for i in 0..<numberOfSections() {
+            for j in 0..<numberOfItems(i) {
+                if(j%2==0){ setWeather(i, item: j, weather: "Sunny")}
+                else if(j%3==0){ setWeather(i, item: j, weather: "Rainy")}
+                else if(j%5==0){ setWeather(i, item: j, weather: "Cloudy")}
+                else {setWeather(i, item: j, weather: "Snowy")}
+            }
+        }
+        albumsRow = albums
     }
     
     //一つ次の曲へ移る
@@ -181,6 +207,11 @@ class PlayMusic{
             audio.pause()
 //          self.title = "Songs"
         }
+    }
+    
+    //停止
+    func stop() {
+        audio.stop()
     }
     
     func setPlayingTime(pos : Double) {

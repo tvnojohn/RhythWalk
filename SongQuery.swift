@@ -18,6 +18,8 @@ struct SongInfo {
     
     // UInt64だとうまくいかなかった。バグ？
     var songId   :  NSNumber
+    
+    var weather: String
 }
 
 // アルバム情報
@@ -56,7 +58,8 @@ class SongQuery {
                     albumTitle: song.valueForProperty( MPMediaItemPropertyAlbumTitle ) as String,
                     artistName: song.valueForProperty( MPMediaItemPropertyArtist ) as String,
                     songTitle:  song.valueForProperty( MPMediaItemPropertyTitle ) as String,
-                    songId:     song.valueForProperty( MPMediaItemPropertyPersistentID ) as NSNumber
+                    songId:     song.valueForProperty( MPMediaItemPropertyPersistentID ) as NSNumber,
+                    weather:    String("")// = "nothing"//song.valueForProperty(MPMediaItemPropertyComments) as String,
                 )
                 
                 songs.append( songInfo )
@@ -74,6 +77,52 @@ class SongQuery {
         return albums
         
     }
+    
+    func getListFromWeather(albumsRow:[AlbumInfo], w: String) -> [AlbumInfo] {
+        var albums: [AlbumInfo] = albumsRow
+        var albums2: [AlbumInfo] = []
+        
+        for album in albums {
+            var albumItems: [SongInfo] = album.songs
+            var songs: [SongInfo] = []
+            var weatherCount: Int = 0
+            
+            for song in albumItems {
+                if(song.weather == w){songs.append( song ); weatherCount++ }
+            }
+            
+            var albumInfo: AlbumInfo = AlbumInfo(
+                albumTitle: album.albumTitle,
+                songs: songs
+            )
+            
+            if(weatherCount != 0){ albums2.append( albumInfo ) }
+        }
+        
+        return albums2
+        
+    }
+    
+    func removeSongs(albumsRow: [AlbumInfo]) -> [AlbumInfo] {
+        var albums: [AlbumInfo] = albumsRow
+        var albums2: [AlbumInfo] = []
+        
+        for album in albums {
+            var albumItems: [SongInfo] = album.songs
+            //            var songs: [SongInfo] = []
+            //            var count: Int = 0
+            
+            for(var i = album.songs.count-1; 0 <= i ; i--) {
+                if (album.songs[i].weather != "Sunny"){
+                    albumItems.removeAtIndex(i)
+                }
+                
+                //                count++
+            }
+        }
+        return albums
+    }
+
     
     // songIdからMediaItemを取り出す
     func getItem( songId: NSNumber ) -> MPMediaItem {

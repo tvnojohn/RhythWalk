@@ -129,6 +129,10 @@ class ViewController: UIViewController{
         
         NSTimer.scheduledTimerWithTimeInterval(0.1,target:self,selector:"count5Sec", userInfo: nil, repeats: true)
         
+        player.testSetWeather()////////////////////////<=
+        //player.listFromWeather()////////////////////////<=
+        //player.musicUrl(0, item: 0)
+
         player.musicUrl(0, item: 0)        ////////////////////////<=
         //player.musicLyrics(sec, secitem: 0)
         
@@ -181,8 +185,10 @@ class ViewController: UIViewController{
         playTimeLabel.textAlignment = .Center
         playTimeLabel.layer.position = CGPoint(x: self.view.bounds.width/2 ,y:self.view.bounds.height/2 + 30)
         self.view.addSubview(playTimeLabel)
+        
     }
 
+    /*
     //音楽再生ボタン
     func tapped(sender: UIButton){
         let image = UIImage(named: "停止ボタン.png") as UIImage
@@ -199,7 +205,33 @@ class ViewController: UIViewController{
             active = false
             player.pause()
         }
+    }*/
+    
+    func tapPlayButton(sender: UIButton){
+        let image = UIImage(named: "停止ボタン.png") as UIImage
+        sender.setImage(image, forState: .Normal)
+        active = true
+        setSeekbarTime()
+        player.printSongInfo()
+        player.play()
     }
+    
+    func tapStopButton(sender: UIButton){
+        let image2 = UIImage(named: "再生ボタン.png") as UIImage
+        sender.setImage(image2, forState: .Normal)
+        active = false
+        player.pause()
+    }
+    
+    func tapped(sender: UIButton){
+        if(active==false){
+            self.tapPlayButton(sender)
+        }
+        else{
+            self.tapStopButton(sender)
+        }
+    }
+
     
     //再生中のスタイリッシュシークバー
     func seekMove(){
@@ -403,7 +435,7 @@ class ViewController: UIViewController{
     
     //BPMと一致した曲にする
     func musicShuffle(){
-        if(bpm != 0 || (bpm > 79 && bpm < 210)){
+        if(bpm != 0 && (bpm > 85 && bpm < 200)){
             while(player.musicBPM() >= bpm + 8 || player.musicBPM() <= bpm - 7) {
                 player.nextSong()
             }
