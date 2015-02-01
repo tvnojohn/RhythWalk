@@ -20,8 +20,8 @@ class GetWeather {
     // API取得の開始処理
     func getAPIData() {
         let URL = NSURL(string: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=43.067885&lon=141.355539&mode=json&cnt=14&APPID=f7c8d5c740cd08b96df59d1775ef82ac")
-        let req = NSURLRequest(URL: URL)
-        let connection: NSURLConnection = NSURLConnection(request: req, delegate: self, startImmediately: false)
+        let req = NSURLRequest(URL: URL!)
+        let connection: NSURLConnection = NSURLConnection(request: req, delegate: self, startImmediately: false)!
         var weather: String = ""
         
         // NSURLConnectionを使ってAPIを取得する

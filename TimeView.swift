@@ -27,7 +27,7 @@ class TimeView{
         //和暦を使いたいときはidentifierにはNSJapaneseCalendarを指定
         //let calendar = NSCalendar(identifier: NSJapaneseCalendar)
 
-        var comps:NSDateComponents = calendar.components(NSCalendarUnit.YearCalendarUnit|NSCalendarUnit.MonthCalendarUnit|NSCalendarUnit.DayCalendarUnit|NSCalendarUnit.HourCalendarUnit|NSCalendarUnit.MinuteCalendarUnit|NSCalendarUnit.SecondCalendarUnit,
+        var comps:NSDateComponents = calendar!.components(NSCalendarUnit.YearCalendarUnit|NSCalendarUnit.MonthCalendarUnit|NSCalendarUnit.DayCalendarUnit|NSCalendarUnit.HourCalendarUnit|NSCalendarUnit.MinuteCalendarUnit|NSCalendarUnit.SecondCalendarUnit,
         fromDate: date)
         
         dates.year = comps.year
@@ -42,16 +42,16 @@ class TimeView{
     
     func season()-> String{
         if(dates.month == 1 || dates.month == 12 || dates.month == 2){
-            return "Winter"
+            return "winter"
         }
         else if(dates.month >= 3 && dates.month <= 5){
-            return "Supring"
+            return "supring"
         }
         else if(dates.month >= 6 && dates.month <= 8){
-            return "Summer"
+            return "summer"
         }
         else{
-            return "Autumn"
+            return "autumn"
         }
     }
     
@@ -60,11 +60,11 @@ class TimeView{
         if(dates.minute >= 30) {timeBasis = timeBasis + 1}
         if(timeBasis == 24) {timeBasis == 0}
         
-        if(timeBasis >= 0 && timeBasis <= 3) {return "Mid Night"}
-        else if(timeBasis >= 4 && timeBasis <= 7) {return "Early morning"}
-        else if(timeBasis >= 8 && timeBasis <= 11) {return "Morning"}
-        else if(timeBasis >= 12 && timeBasis <= 15) {return "Noon"}
-        else if(timeBasis >= 16 && timeBasis <= 18) {return "Evening"}
-        else {return "Night"}
+        if(timeBasis >= 0 && timeBasis <= 3) {return "mid night"}
+        else if(timeBasis >= 4 && timeBasis <= 7) {return "early morning"}
+        else if(timeBasis >= 8 && timeBasis <= 11) {return "morning"}
+        else if(timeBasis >= 12 && timeBasis <= 15) {return "afternoon"}
+        else if(timeBasis >= 16 && timeBasis <= 18) {return "evening"}
+        else {return "night"}
     }
 }
