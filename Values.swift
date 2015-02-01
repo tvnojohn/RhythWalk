@@ -14,6 +14,13 @@ class Values{
     var placeValue:Float = 0.5
     var weatherValue:Float = 0.5
     var seasonValue:Float = 0.5
+    var timeState:String? = "summer"
+    var placeState:String? = "mountain"
+    var weatherState:String? = "sunny"
+    var seasonState:String? = "winter"
+    var listString:String = "null"
+    var listFlag:Bool = false
+    
     
     func setBPM(check: Bool)-> Void{
         BPMCheck = check
@@ -33,5 +40,29 @@ class Values{
     
     func setSeasonValue(val: Float)-> Void{
         seasonValue = val
+    }
+    
+    func setTimeState(val: String?)-> Void{
+        timeState = val
+    }
+    
+    func setPlaceState(val: String?)-> Void{
+        placeState = val
+    }
+    
+    func setWeatherState(val: String?)-> Void{
+        weatherState = val
+    }
+    
+    func setSeasonState(val: String?)-> Void{
+        seasonState = val
+    }
+    
+    func setListString(val: String?)-> Void{
+        listString = val!
+    }
+    
+    func setListFlag(val: Bool)->Void{
+        listFlag = val
     }
 }
