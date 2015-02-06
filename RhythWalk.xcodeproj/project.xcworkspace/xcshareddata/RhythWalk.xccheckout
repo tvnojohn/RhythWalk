@@ -12,6 +12,8 @@
 	<dict>
 		<key>0EE5F798DA6D8D6CE166308FA98148561E01108D</key>
 		<string>https://github.com/b1012038/RhythWalk.git</string>
+		<key>EC7F76FEC6331F54475097E12132CA1BB7A22C1F</key>
+		<string>https://github.com/b1012038/RhythWalk.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>RhythWalk.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>0EE5F798DA6D8D6CE166308FA98148561E01108D</key>
 		<string>../..</string>
+		<key>EC7F76FEC6331F54475097E12132CA1BB7A22C1F</key>
+		<string>../../RhythWalk</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/b1012038/RhythWalk.git</string>
@@ -33,6 +37,14 @@
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>0EE5F798DA6D8D6CE166308FA98148561E01108D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RhythWalk</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC7F76FEC6331F54475097E12132CA1BB7A22C1F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>RhythWalk</string>
 		</dict>
